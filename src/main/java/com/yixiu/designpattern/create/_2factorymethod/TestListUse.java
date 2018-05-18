@@ -1,6 +1,6 @@
 package com.yixiu.designpattern.create._2factorymethod;
 
-public class TestUse {
+public class TestListUse {
 
 
     public static void main(String args[]){
