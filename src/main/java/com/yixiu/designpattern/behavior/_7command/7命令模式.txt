@@ -1,0 +1,12 @@
+【6】命令模式
+http://wiki.jikexueyuan.com/project/design-pattern-behavior/command-one.html
+http://wiki.jikexueyuan.com/project/design-pattern-behavior/command-two.html
+
+1，what
+命令模式（Command Pattern）：
+将请求封装为一个对象，客户端通过调用
+
+
+
+
+2,why
