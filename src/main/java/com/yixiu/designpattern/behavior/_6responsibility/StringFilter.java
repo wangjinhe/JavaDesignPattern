@@ -12,7 +12,7 @@ public class StringFilter {
     public static void main(String args[]) {
 
         Request request = new Request();
-        request.setRequestStr("<html>你好啊，\\，有没有. 黄色啊 </html>");
+        request.setRequestStr("<html>你好啊，\\，有没有. '黄色啊 </html>");
 
         FilterChain chain = new FilterChain();
         chain.addFilter(new HtmlFilter()).addFilter(new SensitiveFilter()).addFilter(new SpecialCharFilter());
@@ -117,7 +117,7 @@ class SpecialCharFilter implements IFilter {
     public void doFilter(Request request, FilterChain chain) {
         // 特殊字符，比如 \  ！
         // 注意： replaceAll的第1个参数是正则表达式，如果要替换\,正则需要转义为\\,然后在java中，需要再加两个\转义
-        String str = request.getRequestStr().replaceAll("\\\\","").replaceAll("!","");
+        String str = request.getRequestStr().replaceAll("\\\\","").replaceAll("'","");
         request.setRequestStr(str);
         // 把控制权交给链，让链执行下一个过滤器
         chain.doFilter(request,chain);
